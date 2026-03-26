@@ -3,6 +3,7 @@ import { Star } from "lucide-react";
 
 const FeedBackForm = () => {
   const [rating, setRating] = useState(0);
+  const [hover, setHover] = useState(0);
 
   const handleSubmit = () => {};
 
@@ -12,7 +13,11 @@ const FeedBackForm = () => {
         <legend>Rate your experience</legend>
         <div>
           {[1, 2, 3, 4, 5].map((star) => (
-            <label key={star}>
+            <label
+              key={star}
+              onMouseEnter={() => setHover(star)}
+              onMouseLeave={() => setHover(0)}
+            >
               <input
                 type="radio"
                 name="rating"
@@ -23,8 +28,8 @@ const FeedBackForm = () => {
               <span>
                 <Star
                   size={32}
-                  fill={star <= rating ? "#ffd700" : "transparent"}
-                  color={star <= rating ? "#ffd700" : "#e4e5e9"}
+                  fill={star <= (hover || rating) ? "#ffd700" : "transparent"}
+                  color={star <= (hover || rating) ? "#ffd700" : "#e4e5e9"}
                   style={{ cursor: "pointer", transition: "all 0.2s" }}
                 />
               </span>

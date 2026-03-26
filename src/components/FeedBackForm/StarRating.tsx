@@ -1,5 +1,6 @@
 import { Star } from "lucide-react";
 import { useState } from "react";
+import styles from "./FeedBackForm.module.css";
 
 const StarRating = ({
   rating,
@@ -11,7 +12,7 @@ const StarRating = ({
   const [hover, setHover] = useState(0);
   return (
     <fieldset>
-      <legend>Rate your experience</legend>
+      <legend>Rate your experience *</legend>
       <div>
         {[1, 2, 3, 4, 5].map((star) => (
           <label
@@ -25,12 +26,13 @@ const StarRating = ({
               value={star}
               checked={rating === star}
               onChange={() => setRating(star)}
+              className={styles.hiddenInput}
             />
             <span>
               <Star
                 size={32}
                 fill={star <= (hover || rating) ? "#ffd700" : "transparent"}
-                color={star <= (hover || rating) ? "#ffd700" : "#e4e5e9"}
+                color={star <= (hover || rating) ? "#ffd700" : "#747474"}
                 style={{ cursor: "pointer", transition: "all 0.2s" }}
               />
             </span>

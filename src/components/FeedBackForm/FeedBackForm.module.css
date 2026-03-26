@@ -1,0 +1,31 @@
+.form {
+  max-width: 400px;
+  padding: 2rem;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 0 auto;
+  box-shadow:
+    0 0px 25px -5px rgb(0 0 0 / 0.1),
+    0 0px 10px -6px rgb(0 0 0 / 0.1);
+  text-align: left;
+}
+.commentSection {
+  display: flex;
+  flex-direction: column;
+}
+.hiddenInput {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.submitBtn {
+  background: #007bff;
+  color: white;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}

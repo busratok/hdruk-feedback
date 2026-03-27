@@ -13,7 +13,7 @@ const StarRating = ({
   return (
     <fieldset>
       <legend>Rate your experience *</legend>
-      <div>
+      <div className={styles.starContainer}>
         {[1, 2, 3, 4, 5].map((star) => (
           <label
             key={star}
@@ -27,6 +27,8 @@ const StarRating = ({
               checked={rating === star}
               onChange={() => setRating(star)}
               className={styles.hiddenInput}
+              required
+              aria-required="true"
             />
             <span>
               <Star
